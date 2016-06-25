@@ -31,4 +31,9 @@ describe 'ObjetoEspacial' do
     expect(objetoEspacial.objeto_esta_vivo).to eq false
   end
 
+   it 'El objeto espacial con constructor ' do
+    objetoEspacial = ObjetoEspacial.new 10, 300
+    expect(objetoEspacial.masa).to eq 300
+  end
+
 end
