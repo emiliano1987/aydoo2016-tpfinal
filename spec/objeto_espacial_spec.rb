@@ -14,9 +14,16 @@ describe 'ObjetoEspacial' do
     expect(objetoEspacial.masa).to eq 100
   end
 
-    it 'El objeto espacial es un objeto vivo cuando se inicia' do
+   it 'El objeto espacial es un objeto vivo cuando se inicia' do
     objetoEspacial = ObjetoEspacial.new
     expect(objetoEspacial.objeto_esta_vivo).to eq true
   end
+
+   it 'El objeto espacial es un objeto vivo cuando se inicia' do
+    objetoEspacial = ObjetoEspacial.new
+    objetoEspacial.masa = 0
+    expect(objetoEspacial.objeto_esta_vivo).to eq false
+  end
+
 
 end
