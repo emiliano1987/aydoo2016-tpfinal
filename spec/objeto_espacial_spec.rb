@@ -40,8 +40,13 @@ describe 'ObjetoEspacial' do
     objetoEspacial = ObjetoEspacial.new 1000, 41
     expect(objetoEspacial.vida).to eq 1000
   end
+   
+   it 'El objeto espacial tiene 1000 de vida y su estado es con vida' do
+    objetoEspacial = ObjetoEspacial.new 1000, 41
+    expect(objetoEspacial.objeto_esta_vivo).to eq true
+  end
 
    it 'El ingreso de parametros es incorrecto' do
  	expect{objetoEspacial = ObjetoEspacial.new 1000, 41 , 10}.to raise_error(ArgumentError)  
- end
+  end
 end
