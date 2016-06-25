@@ -27,11 +27,13 @@ class ObjetoEspacial
 	 def inicializa_con_parametros (vidas,masas)
 	  	@vida = vidas
 	 	@masa = masas
+	 	@objeto_vivo = objeto_esta_vivo
 	 end
 
 	 def inicializa_sin_parametros
 	 	@vida = 100
 	 	@masa = 100
+	 	@objeto_vivo = true
 	 end
 	
 end
