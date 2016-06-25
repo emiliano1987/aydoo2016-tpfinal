@@ -31,9 +31,17 @@ describe 'ObjetoEspacial' do
     expect(objetoEspacial.objeto_esta_vivo).to eq false
   end
 
-   it 'El objeto espacial con constructor ' do
+   it 'El objeto espacial con masa de 300 ' do
     objetoEspacial = ObjetoEspacial.new 10, 300
     expect(objetoEspacial.masa).to eq 300
   end
 
+   it 'El objeto espacial vida de 1000 ' do
+    objetoEspacial = ObjetoEspacial.new 1000, 41
+    expect(objetoEspacial.vida).to eq 1000
+  end
+
+   it 'El ingreso de parametros es incorrecto' do
+ 	expect{objetoEspacial = ObjetoEspacial.new 1000, 41 , 10}.to raise_error(ArgumentError)  
+ end
 end

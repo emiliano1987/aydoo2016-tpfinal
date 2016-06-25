@@ -9,7 +9,7 @@ class ObjetoEspacial
 	 	elsif args.length == 0
 	 		inicializa_sin_parametros
 	 	else
-	 		raiseArgum
+	 		raise ArgumentError, "Ha ingresado un numero incorrectos de parametros"
  		end
  	end
 
