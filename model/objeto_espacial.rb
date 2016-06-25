@@ -13,6 +13,7 @@ class ObjetoEspacial
  		end
  	end
 
+	private
 	def objeto_esta_vivo
 	 	if((@vida==0)|| (@masa == 0))
 	 		@objeto_vivo = false;
@@ -23,17 +24,16 @@ class ObjetoEspacial
 	 	return @objeto_vivo
 	end
 	
-	private
-	 def inicializa_con_parametros (vidas,masas)
+	def inicializa_con_parametros (vidas,masas)
 	  	@vida = vidas
 	 	@masa = masas
 	 	@objeto_vivo = objeto_esta_vivo
 	 end
 
-	 def inicializa_sin_parametros
+	def inicializa_sin_parametros
 	 	@vida = 100
 	 	@masa = 100
 	 	@objeto_vivo = true
-	 end
+	end
 	
 end
