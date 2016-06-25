@@ -9,4 +9,8 @@ describe 'ObjetoEspacial' do
     expect(objetoEspacial.vida).to eq 100
   end
 
+  it 'Se inicia el Objeto Espacial con Masa 100' do
+    objetoEspacial = ObjetoEspacial.new
+    expect(objetoEspacial.masa).to eq 100
+  end
 end
