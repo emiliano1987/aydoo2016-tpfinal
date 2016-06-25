@@ -6,5 +6,14 @@ class ObjetoEspacial
 	 	@vida = 100
 	 	@masa = 100
 	 end
+
+	 def objeto_esta_vivo
+	 	if((@vida<0))
+	 		@objeto_vivo = false;
+	 	else
+	 		@objeto_vivo = true;
+	 	end
+	 	return @objeto_vivo
+	 end
 	
 end
