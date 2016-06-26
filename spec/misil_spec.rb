@@ -96,4 +96,22 @@ describe 'Misil' do
     expect(misil.vida).to eq 100
     expect(misil.masa).to eq 100
   end
+
+  it 'deberia modificar sus unidades de vida y masa al impactar con otros objeto espaciales' do
+    misil = Misil.new 1000,200
+    bomba = Bomba.new 300, 400
+    estrella = Estrella.new 900,100
+    segundo_misil = Misil.new 10,300
+    nave = Nave.new 100,9000
+
+
+    misil.impacta_con_objeto bomba
+    misil.impacta_con_objeto estrella
+    misil.impacta_con_objeto segundo_misil
+    misil.impacta_con_objeto nave
+
+    #Se verifica que no se haya modificado los valores
+    expect(misil.vida).to eq 800
+    expect(misil.masa).to eq 200
+  end
 end
