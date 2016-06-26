@@ -14,7 +14,7 @@ class ObjetoEspacial
  	end
 
 	def objeto_esta_vivo
-	 	if((@vida==0)|| (@masa == 0))
+	 	if((@vida<=0)|| (@masa <= 0))
 	 		@objeto_vivo = false;
 	 	else
 	 		@objeto_vivo = true;
