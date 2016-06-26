@@ -40,7 +40,16 @@ describe 'Bomba' do
     bomba.impacta_con_objeto nave
 
     expect(bomba.vida).to eq 333
-    expect(nave.objeto_esta_vivo).to eq true
+    expect(bomba.objeto_esta_vivo).to eq true
   end
 
+  it 'deberia contener 150 unidades de vida al impactar con otro objeto espacial del tipo Misil' do
+    bomba = Bomba.new 300, 300
+    misil = Misil.new 1500, 1500
+
+    bomba.impacta_con_objeto misil
+
+    expect(bomba.vida).to eq 150
+    expect(bomba.objeto_esta_vivo).to eq true
+  end
 end
