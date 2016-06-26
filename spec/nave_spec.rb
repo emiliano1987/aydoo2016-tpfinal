@@ -28,4 +28,9 @@ describe 'Nave' do
     nave = Nave.new 4000, 8
     expect(nave.vida).to eq 4000
   end
+
+  it 'El ingreso de parametros es incorrecto' do
+ 	expect{nave = Nave.new 1 }.to raise_error(ArgumentError)  
+  end
+
 end
