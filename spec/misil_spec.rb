@@ -109,7 +109,6 @@ describe 'Misil' do
     misil.impacta_con_objeto segundo_misil
     misil.impacta_con_objeto nave
 
-    #Se verifica que no se haya modificado los valores
     expect(misil.vida).to eq 800
     expect(misil.masa).to eq 200
   end
