@@ -48,4 +48,15 @@ describe 'Misil' do
     expect(misil.vida).to eq 325
     expect(misil.objeto_esta_vivo).to eq true
   end
+
+  it 'deberia contener 50 unidades de vida al impactar con otro objeto espacial del mismo tipo (Misil)' do
+    misil = Misil.new 150, 800
+    segundo_misil = Misil.new 110, 40
+    
+
+    misil.impacta_con_objeto segundo_misil
+
+    expect(misil.vida).to eq 50
+    expect(misil.objeto_esta_vivo).to eq true
+  end
 end

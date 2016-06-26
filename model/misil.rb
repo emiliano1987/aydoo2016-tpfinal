@@ -12,7 +12,7 @@ class Misil < ObjetoEspacial
 	private
 	def generar_efectos_segun_objetos (mapa_choque)
 		mapa_choque[Nave] = EfectoDestructivoUnidades.new 100
-	    mapa_choque[Misil] = EfectoDestructivoUnidades.new 80
+	    mapa_choque[Misil] = EfectoDestructivoUnidades.new 100
 	    mapa_choque[Bomba] = EfectoNulo.new
 	    mapa_choque[Asteroide] = EfectoNulo.new
 		mapa_choque[Estrella] = EfectoNulo.new
