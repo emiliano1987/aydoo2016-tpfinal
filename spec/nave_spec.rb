@@ -29,7 +29,7 @@ describe 'Nave' do
     expect(nave.vida).to eq 4000
   end
 
-  it 'deberia no permitir el ingreso de mas de dos parametros al crear la Nave' do
+  it 'deberia no permitir el ingreso de un parametros al crear la Nave' do
  	  expect{nave = Nave.new 1 }.to raise_error(ArgumentError)  
   end
 
@@ -75,7 +75,7 @@ describe 'Nave' do
     expect(nave.objeto_esta_vivo).to eq true
   end
 
-  it 'deberia contener 500 unidades de vida con otro objeto espacial del tipo Estrella' do
+  it 'deberia contener 500 unidades de vida al impactar con otro objeto espacial del tipo Estrella' do
     nave = Nave.new 400, 400
     estrella = Estrella.new 
 
@@ -83,5 +83,17 @@ describe 'Nave' do
 
     expect(nave.vida).to eq 500
     expect(nave.objeto_esta_vivo).to eq true
+  end
+
+  it 'deberia contener 0 unidades de vida al impactar con otro dos objetos espaciales del tipo Bomba' do
+    nave = Nave.new 
+    primer_bomba = Bomba.new 
+    segunda_bomba = Bomba.new 
+
+    nave.impacta_con_objeto primer_bomba
+    nave.impacta_con_objeto segunda_bomba
+
+    expect(nave.vida).to eq 0
+    expect(nave.objeto_esta_vivo).to eq false
   end
 end
