@@ -43,7 +43,7 @@ describe 'Nave' do
     expect(nave.objeto_esta_vivo).to eq true
   end
 
-  it 'deberia contener 100 unidades de vida al impactar con otro objeto espacial del tipo Misil' do
+  it 'deberia contener 200 unidades de vida al impactar con otro objeto espacial del tipo Misil' do
     nave = Nave.new 280, 1000
     misil = Misil.new 180, 1000
 
@@ -51,5 +51,15 @@ describe 'Nave' do
 
     expect(nave.vida).to eq 200
     expect(nave.objeto_esta_vivo).to eq true
+  end
+
+  it 'deberia contener 0 unidades de vida al impactar con otro objeto espacial del tipo Bomba' do
+    nave = Nave.new 50, 1000
+    bomba = Bomba.new 1000, 50
+
+    nave.impacta_con_objeto bomba
+
+    expect(nave.vida).to eq 0
+    expect(nave.objeto_esta_vivo).to eq false
   end
 end
