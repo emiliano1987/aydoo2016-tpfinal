@@ -4,7 +4,7 @@ require_relative '../model/efecto_destructivo_unidades'
 
 describe 'EfectoDestructivoUnidades' do
 
-  it 'El impacto entre dos objetos deja sin vida a uno' do
+  it 'El impacto entre dos objetos deja con la mitad de la vida al que genera el choque' do
     asteroide = Asteroide.new
     bomba = Bomba.new
     efecto = EfectoDestructivoUnidades.new
@@ -12,7 +12,7 @@ describe 'EfectoDestructivoUnidades' do
     expect(asteroide.vida).to eq 50
   end
 
-  it 'El impacto entre dos objetos no modifica la vida del objeto impactado' do
+  it 'El impacto entre dos objetos modifica la vida del objeto impactado' do
     nave = Nave.new
     asteroide = Asteroide.new
     efecto = EfectoDestructivoUnidades.new
@@ -20,7 +20,7 @@ describe 'EfectoDestructivoUnidades' do
     expect(nave.vida).to eq 70
   end
 
-  it 'El impacto entre dos objetos verifica que el objeto que genera el impacto sigue con vida' do
+  it 'El impacto entre una Estrella y un Misil modifica la vida del objeto impactado' do
     estrella = Estrella.new
     misil = Misil.new
     efecto = EfectoDestructivoUnidades.new
@@ -28,11 +28,19 @@ describe 'EfectoDestructivoUnidades' do
     expect(estrella.vida).to eq 90
   end
 
-  it 'El impacto entre dos objetos verifica que el objeto que genera el impacto esta sin vida' do
+  it 'El impacto entre dos objetos verifica que el objeto que genera el impacto esta con vida' do
     estrella = Estrella.new
     misil = Misil.new
     efecto = EfectoDestructivoUnidades.new
     efecto.impacto(estrella,misil,10)
     expect(estrella.objeto_esta_vivo).to eq true
+  end
+
+    it 'El impacto entre dos objetos verifica que el objeto que genera el impacto esta sin vida' do
+    estrella = Estrella.new 10,1
+    misil = Misil.new
+    efecto = EfectoDestructivoUnidades.new
+    efecto.impacto(estrella,misil,10)
+    expect(estrella.objeto_esta_vivo).to eq false
   end
 end
