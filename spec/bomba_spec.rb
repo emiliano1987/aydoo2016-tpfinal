@@ -52,4 +52,15 @@ describe 'Bomba' do
     expect(bomba.vida).to eq 150
     expect(bomba.objeto_esta_vivo).to eq true
   end
+
+  it 'deberia contener 1000 unidades de vida al impactar con otro objeto espacial del mismo tipo (Bomba)' do
+    bomba = Bomba.new 1100, 400
+    segunda_bomba = Bomba.new 10, 300
+
+    bomba.impacta_con_objeto segunda_bomba
+
+    expect(bomba.vida).to eq 1000
+    expect(bomba.objeto_esta_vivo).to eq true
+  end
+
 end
