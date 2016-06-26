@@ -63,7 +63,7 @@ describe 'Estrella' do
     expect(nueva_estrella.objeto_esta_vivo).to eq true
   end
 
-  it 'deberia mantener la vida de la Estrella al impactar con una Bomba' do
+  it 'deberia contener 0 unidades de vida al impactar con una Bomba' do
     estrella = Estrella.new 
     bomba = Bomba.new 1, 1
 
@@ -72,5 +72,14 @@ describe 'Estrella' do
     expect(estrella.vida).to eq 0
     expect(estrella.objeto_esta_vivo).to eq false
   end
-  
+
+  it 'deberia contener 0 unidades de vida al impactar contra un Asteroide' do
+    estrella = Estrella.new 
+    asteroide = Asteroide.new 
+
+    estrella.impacta_con_objeto asteroide
+
+    expect(estrella.vida).to eq 0
+    expect(estrella.objeto_esta_vivo).to eq false
+  end
 end
