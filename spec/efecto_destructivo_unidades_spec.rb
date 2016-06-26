@@ -36,11 +36,19 @@ describe 'EfectoDestructivoUnidades' do
     expect(estrella.objeto_esta_vivo).to eq true
   end
 
-    it 'El impacto entre dos objetos verifica que el objeto que genera el impacto esta sin vida' do
+  it 'El impacto entre dos objetos verifica que el objeto que genera el impacto esta sin vida' do
     estrella = Estrella.new 10,1
     misil = Misil.new
     efecto = EfectoDestructivoUnidades.new
     efecto.impacto(estrella,misil,10)
+    expect(estrella.objeto_esta_vivo).to eq false
+  end
+
+  it 'El impacto entre dos objetos es mayor a la vida del objeto impactado' do
+    estrella = Estrella.new 30,50
+    misil = Misil.new
+    efecto = EfectoDestructivoUnidades.new
+    efecto.impacto(estrella,misil,40)
     expect(estrella.objeto_esta_vivo).to eq false
   end
 end
