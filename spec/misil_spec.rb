@@ -34,4 +34,8 @@ describe 'Misil' do
     expect(misil.vida).to eq 0
   end
 
+  it 'El ingreso de parametros es incorrecto' do
+ 	expect{misil = Misil.new 0,1,0}.to raise_error(ArgumentError)  
+  end
+
 end
