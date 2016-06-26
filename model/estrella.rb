@@ -12,7 +12,7 @@ class Estrella < ObjetoEspacial
 	private
 	def generar_efectos_segun_objetos (mapa_choque)
 		mapa_choque[Nave] = EfectoDestructivoPorcentaje.new 100
-	    mapa_choque[Misil] = EfectoNulo.new()
+	    mapa_choque[Misil] = EfectoNulo.new 
 	    mapa_choque[Bomba] = EfectoDestructivoPorcentaje.new 100
 	    mapa_choque[Asteroide] = EfectoDestructivoPorcentaje.new 100
 		mapa_choque[Estrella] = EfectoDestructivoPorcentaje.new 100 

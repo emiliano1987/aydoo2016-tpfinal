@@ -47,6 +47,6 @@ describe 'ObjetoEspacial' do
   end
 
    it 'El ingreso de parametros es incorrecto' do
- 	expect{objetoEspacial = ObjetoEspacial.new 1000, 41 , 10}.to raise_error(ArgumentError)  
+ 	  expect{objetoEspacial = ObjetoEspacial.new 1000, 41 , 10}.to raise_error(ArgumentError)  
   end
 end
