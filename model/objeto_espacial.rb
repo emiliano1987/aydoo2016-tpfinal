@@ -2,7 +2,8 @@ class ObjetoEspacial
 
 	attr_accessor :vida, :masa, :objeto_vivo, :efecto_choque
 
-	 def initialize(*args)
+	def initialize(*args)
+				@efecto_choque = Hash.new
 
 	 	if args.length == 2
 	 		inicializa_con_parametros(args[0],args[1])
@@ -16,8 +17,6 @@ class ObjetoEspacial
 	def objeto_esta_vivo
 	 	if((@vida<=0)|| (@masa <= 0))
 	 		@objeto_vivo = false;
-	 		@vida=0
-	 		@masa=0
 	 	else
 	 		@objeto_vivo = true;
 	 	end
@@ -25,6 +24,13 @@ class ObjetoEspacial
 	 	return @objeto_vivo
 	end
 	
+	def impacta_con_objeto objeto_espacial
+		if(self.objeto_esta_vivo == true && objeto_espacial.objeto_esta_vivo == true)
+			@efecto_choque.fetch(objeto_espacial.class).impacto(self, objeto_espacial)
+			objeto_espacial
+		end
+	end
+
 	private
 	 def inicializa_con_parametros (vidas,masas)
 	  	@vida = vidas
