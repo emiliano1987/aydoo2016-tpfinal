@@ -14,23 +14,23 @@ describe 'Bomba' do
     expect(bomba.vida).to eq 100
   end
 
-  it 'La Bomba es un objeto muerto cuando se inicia' do
-    misil = Bomba.new 0,0
-    expect(misil.objeto_esta_vivo).to eq false
+  it 'El objeto Bomba es un objeto vivo cuando se inicia' do
+    bomba = Bomba.new 1,1
+    expect(bomba.objeto_esta_vivo).to eq true
   end
 
-  it 'El misil se inicializa con masa de 1 ' do
-    misil = Bomba.new 2, 1
-    expect(misil.masa).to eq 1
+  it 'El objeto bomba se inicializa con masa de 1 ' do
+    bomba = Bomba.new 2, 1
+    expect(bomba.masa).to eq 1
   end
 
-  it 'El misil se inicializa con vida de 0 ' do
-    misil = Bomba.new 0,0
-    expect(misil.vida).to eq 0
+  it 'El objeto bomba se inicializa con vida de 0 ' do
+    bomba = Bomba.new 0,0
+    expect(bomba.vida).to eq 0
   end
 
   it 'El ingreso de parametros es incorrecto' do
- 	expect{misil = Bomba.new 0,1,0}.to raise_error(ArgumentError)  
+ 	expect{bomba = Bomba.new 0,1,0}.to raise_error(ArgumentError)  
   end
 
 end
