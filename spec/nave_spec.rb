@@ -62,4 +62,16 @@ describe 'Nave' do
     expect(nave.vida).to eq 0
     expect(nave.objeto_esta_vivo).to eq false
   end
+
+  it 'deberia contener 100 unidades de vida y 350 de masa al impactar con otro objeto espacial del tipo Asteroide' do
+    nave = Nave.new 100, 400
+    asteroide = Asteroide.new 
+
+    nave.impacta_con_objeto asteroide
+
+    expect(nave.masa).to eq 350
+    #Se verifica que la vida no se modifica al impactar
+    expect(nave.vida).to eq 100
+    expect(nave.objeto_esta_vivo).to eq true
+  end
 end
