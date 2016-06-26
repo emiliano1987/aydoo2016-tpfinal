@@ -82,4 +82,14 @@ describe 'Estrella' do
     expect(estrella.vida).to eq 0
     expect(estrella.objeto_esta_vivo).to eq false
   end
+
+  it 'deberia mantener la vida de la Estrella al impactar con un Asteroide ya sin vida' do
+    estrella = Estrella.new 
+    asteroide = Asteroide.new 0,0
+
+    estrella.impacta_con_objeto asteroide
+
+    expect(estrella.vida).to eq 100
+    expect(estrella.objeto_esta_vivo).to eq true
+  end
 end
