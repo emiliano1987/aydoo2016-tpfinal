@@ -68,4 +68,14 @@ describe 'Asteroide' do
     expect(asteroide.masa).to eq 500
     expect(asteroide.objeto_esta_vivo).to eq true
   end
+
+  it 'deberia no modificar sus unidades de masa al impactar con otro objeto espacial del mismo tipo (Asteroide)' do
+    asteroide = Asteroide.new 500, 500
+    nuevo_asteroide = Asteroide.new 500, 500
+
+    asteroide.impacta_con_objeto nuevo_asteroide
+
+    expect(asteroide.masa).to eq 500
+    expect(asteroide.objeto_esta_vivo).to eq true
+  end
 end
