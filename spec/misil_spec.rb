@@ -104,7 +104,6 @@ describe 'Misil' do
     segundo_misil = Misil.new 10,300
     nave = Nave.new 100,9000
 
-
     misil.impacta_con_objeto bomba
     misil.impacta_con_objeto estrella
     misil.impacta_con_objeto segundo_misil
