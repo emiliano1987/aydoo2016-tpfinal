@@ -75,12 +75,25 @@ describe 'Bomba' do
 
   it 'deberia contener 1 unidad de vida al impactar con otro objeto espacial del tipo Estrella' do
     bomba = Bomba.new 101,100
-    asteroide = Estrella.new 
+    estrella = Estrella.new 
 
-    bomba.impacta_con_objeto asteroide
+    bomba.impacta_con_objeto estrella
 
     expect(bomba.vida).to eq 1
     expect(bomba.objeto_esta_vivo).to eq true
+  end
+
+  it 'deberia ser un objeto sin vida al impactar con todos los demas objetos creados' do
+    bomba = Bomba.new 10000, 500
+    segunda_bomba = Bomba.new 80, 50
+    estrella = Estrella.new 
+    misil = Misil.new
+    nave = Nave.new 1,1
+    asteroide = Asteroide.new 1,100
+    
+    bomba.impacta_con_objeto asteroide
+
+    expect(bomba.objeto_esta_vivo).to eq false
   end
 
 end
