@@ -74,4 +74,14 @@ describe 'Nave' do
     expect(nave.vida).to eq 100
     expect(nave.objeto_esta_vivo).to eq true
   end
+
+  it 'deberia contener 500 unidades de vida con otro objeto espacial del tipo Estrella' do
+    nave = Nave.new 400, 400
+    estrella = Estrella.new 
+
+    nave.impacta_con_objeto estrella
+
+    expect(nave.vida).to eq 500
+    expect(nave.objeto_esta_vivo).to eq true
+  end
 end
