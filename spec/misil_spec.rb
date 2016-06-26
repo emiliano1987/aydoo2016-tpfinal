@@ -14,4 +14,14 @@ describe 'Misil' do
     expect(misil.vida).to eq 100
   end
 
+  it 'La misil es un objeto vivo cuando se inicia' do
+    misil = Misil.new 1, 2
+    expect(misil.objeto_esta_vivo).to eq true
+  end
+
+  it 'La misil es un objeto muerto cuando se inicia' do
+    misil = Misil.new 0,0
+    expect(misil.objeto_esta_vivo).to eq false
+  end
+
 end
