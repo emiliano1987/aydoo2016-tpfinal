@@ -42,7 +42,7 @@ describe 'Misil' do
 
   it 'deberia no permitir el ingreso de mas de dos parametros al crear la Nave' do
 
- 	  expect{misil = Misil.new 100,501,800,11}.to raise_error(ParametrosIncorrectosError)  
+    expect{misil = Misil.new 100,501,800,11}.to raise_error(ParametrosIncorrectosError)  
   end
 
   it 'deberia contener 325 unidades de vida al impactar con otro objeto espacial del tipo Nave' do

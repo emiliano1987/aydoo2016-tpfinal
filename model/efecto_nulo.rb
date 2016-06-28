@@ -1,4 +1,3 @@
-
 class EfectoNulo
 
   def impacto(objeto_espacial_genera_impacto, objeto_del_espacio_impactado)

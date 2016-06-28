@@ -16,5 +16,5 @@ class Asteroide < ObjetoEspacial
     mapa_choque[Bomba] = EfectoNulo.new
     mapa_choque[Asteroide] = EfectoNulo.new
     mapa_choque[Estrella] = EfectoNulo.new 
-   end
+  end
 end
