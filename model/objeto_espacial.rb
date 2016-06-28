@@ -1,4 +1,4 @@
-require_relative '../model/ingreso_parametros_incorrectos'
+require_relative '../model/ingreso_parametros_incorrectos_error'
 class ObjetoEspacial
 
   attr_accessor :vida, :masa, :objeto_vivo, :efecto_choque
@@ -11,7 +11,7 @@ class ObjetoEspacial
   elsif args.length == 0
     inicializa_sin_parametros
   else
-    fail ParametrosIncorrectos.new end
+    fail ParametrosIncorrectosError.new end
   end
 
   def objeto_esta_vivo
