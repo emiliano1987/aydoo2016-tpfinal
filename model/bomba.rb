@@ -6,8 +6,8 @@ require_relative '../model/efecto_destructivo_porcentaje'
 
 class Bomba < ObjetoEspacial
 
-  def initialize (*args)
-    super(*args)
+  def initialize (*argumento)
+    super(*argumento)
     generar_efectos_segun_objetos (efecto_choque)
   end
 

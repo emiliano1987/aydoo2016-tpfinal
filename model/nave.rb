@@ -5,8 +5,8 @@ require_relative '../model/efecto_masa_disminuye_porcentaje'
 
 class Nave < ObjetoEspacial
 
-  def initialize (*args)
-    super(*args)
+  def initialize (*argumento)
+    super(*argumento)
     generar_efectos_segun_objetos (efecto_choque)
   end
 
