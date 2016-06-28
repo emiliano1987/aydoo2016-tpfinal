@@ -111,4 +111,21 @@ describe 'Asteroide' do
 
     expect{asteroide.impacta_con_objeto bomba}.to raise_error(ObjetoEspacialSinVidaError)
   end
+
+  it 'deberia eliminar un choque posible del Asteroide' do
+    asteroide = Asteroide.new
+
+    asteroide.eliminar_choque Estrella
+
+    expect(asteroide.efecto_choque[Estrella]).to eq nil
+  end
+
+  it 'deberia agregar nuevos objetos espaciales con nuevos efectos para Asteroide' do
+    asteroide = Asteroide.new
+    misil = Misil.new
+
+    asteroide.agregar_choque misil, "efecto_masa_aumenta_unidades"
+
+    expect(asteroide.efecto_choque[Misil]).to eq "efecto_masa_aumenta_unidades"
+  end
 end

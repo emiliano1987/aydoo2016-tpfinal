@@ -2,7 +2,7 @@
 
 
 <h4>*Observacion 1: El uso de herencia puede ser una restricción fuerte, en el caso de querer reusar y no poder heredear de mas de una clase.</h4>
-
+Corregido. Se generan dos nuevos metodos que permitan modificar elementos de las clases heredadas.
 
 <h4>*Observacion 2: Revisar las convenciones de Ruby, recordar que la indentacion es de dos espacios. Revisar los espacios en blanco.</h4>
 Corregido. Se modifican todas las clases con problemas de identacion.

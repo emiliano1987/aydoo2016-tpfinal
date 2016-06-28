@@ -16,6 +16,7 @@ class ObjetoEspacial
     end
   end
 
+  #Metodo que verifica la existencia de un objeto espacial
   def objeto_esta_vivo
     if((@vida<=0)|| (@masa <= 0))
       @objeto_vivo = false
@@ -25,6 +26,8 @@ class ObjetoEspacial
     return @objeto_vivo
   end
 
+  /Metodo que impacta un objeto contra otro. 
+  En caso de que uno de los elementos se encuentre sin vida, se ejecuta una excepcion/
   def impacta_con_objeto objeto_espacial
     if(self.objeto_esta_vivo == true && objeto_espacial.objeto_esta_vivo == true)
       @efecto_choque.fetch(objeto_espacial.class).impacto(self, objeto_espacial)
@@ -34,6 +37,17 @@ class ObjetoEspacial
     end
   end
 
+  #Metodo que permite mantener el principio open-close
+  def agregar_choque objeto_espacial, efecto
+    @efecto_choque[objeto_espacial.class] = efecto
+  end
+
+  #Metodo que permite mantener el principio open-close
+  def eliminar_choque objeto_espacil_a_eliminar
+    @efecto_choque.delete(objeto_espacil_a_eliminar)  
+  end
+  
+  #Metodos privados que inicializan los objetos espaciales
   private
   def inicializa_con_parametros (vidas,masas)
     @vida = vidas

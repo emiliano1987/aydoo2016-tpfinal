@@ -111,4 +111,21 @@ describe 'Bomba' do
 
     expect{bomba.impacta_con_objeto estrella}.to raise_error(ObjetoEspacialSinVidaError)
   end
+
+  it 'deberia eliminar un choque posible de la Bomba' do
+    bomba = Bomba.new
+
+    bomba.eliminar_choque Estrella
+
+    expect(bomba.efecto_choque[Estrella]).to eq nil
+  end
+
+  it 'deberia agregar nuevos objetos espaciales con nuevos efectos para Bomba' do
+    bomba = Bomba.new
+    misil = Misil.new
+
+    bomba.agregar_choque misil, "efecto_masa_aumenta_unidades"
+
+    expect(bomba.efecto_choque[Misil]).to eq "efecto_masa_aumenta_unidades"
+  end
 end

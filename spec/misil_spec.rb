@@ -121,4 +121,21 @@ describe 'Misil' do
 
     expect{misil.impacta_con_objeto asteroide}.to raise_error(ObjetoEspacialSinVidaError)
   end
+
+  it 'deberia eliminar un choque posible del Misil' do
+    misil = Misil.new
+
+    misil.eliminar_choque Estrella
+
+    expect(misil.efecto_choque[Estrella]).to eq nil
+  end
+
+  it 'deberia agregar nuevos objetos espaciales con nuevos efectos para Misil' do
+    misil = Misil.new
+    nave = Nave.new
+
+    misil.agregar_choque nave, "efecto_masa_aumenta_unidades"
+
+    expect(misil.efecto_choque[Nave]).to eq "efecto_masa_aumenta_unidades"
+  end
 end

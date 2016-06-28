@@ -95,4 +95,21 @@ describe 'Estrella' do
 
     expect{estrella.impacta_con_objeto asteroide}.to raise_error(ObjetoEspacialSinVidaError)
   end
+
+  it 'deberia eliminar un choque posible de la Estrella' do
+    estrella = Estrella.new
+
+    estrella.eliminar_choque Misil
+
+    expect(estrella.efecto_choque[Misil]).to eq nil
+  end
+  
+  it 'deberia agregar nuevos objetos espaciales con nuevos efectos para la Estrella' do
+    estrella = Estrella.new
+    misil = Misil.new
+
+    estrella.agregar_choque misil, "efecto_masa_aumenta_unidades"
+
+    expect(estrella.efecto_choque[Misil]).to eq "efecto_masa_aumenta_unidades"
+  end
 end

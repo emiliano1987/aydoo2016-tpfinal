@@ -9,6 +9,7 @@ class Asteroide < ObjetoEspacial
     generar_efectos_segun_objetos (efecto_choque)
   end
 
+  #Metodo privado que graba por cada tipo de Objeto Espacial un Efecto
   private
   def generar_efectos_segun_objetos (mapa_choque)
     mapa_choque[Nave] = EfectoMasaAumentaPorcentaje.new 10
