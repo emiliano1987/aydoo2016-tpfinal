@@ -43,8 +43,8 @@ class ObjetoEspacial
   end
 
   #Metodo que permite mantener el principio open-close
-  def eliminar_choque objeto_espacil_a_eliminar
-    @efecto_choque.delete(objeto_espacil_a_eliminar)  
+  def eliminar_choque objeto_espacial_a_eliminar
+    @efecto_choque.delete(objeto_espacial_a_eliminar)  
   end
   
   #Metodos privados que inicializan los objetos espaciales
