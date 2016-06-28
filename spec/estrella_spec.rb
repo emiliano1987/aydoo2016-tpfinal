@@ -36,7 +36,7 @@ describe 'Estrella' do
 
   it 'deberia no permitir el ingreso de mas de dos parametros al crear la Estrella' do
 
-    expect{estrella = Estrella.new 0,1,0}.to raise_error(ArgumentError)  
+    expect{estrella = Estrella.new 0,1,0}.to raise_error(ParametrosIncorrectosError)  
   end
 
   it 'deberia contener 0 unidades de vida al impactar con otra Estrella' do

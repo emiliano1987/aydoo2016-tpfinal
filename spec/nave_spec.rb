@@ -36,7 +36,7 @@ describe 'Nave' do
 
   it 'deberia no permitir el ingreso de un parametros al crear la Nave' do
 
-    expect{nave = Nave.new 1 }.to raise_error(ArgumentError)  
+    expect{nave = Nave.new 1 }.to raise_error(ParametrosIncorrectosError)  
   end
 
   it 'deberia contener 8 unidades de vida al impactar con otro objeto espacial del mismo tipo (Nave)' do

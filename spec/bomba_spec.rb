@@ -36,7 +36,7 @@ describe 'Bomba' do
 
   it 'deberia no permitir el ingreso de tres parametros al crear la Bomba' do
 
-    expect{bomba = Bomba.new 0,1,0}.to raise_error(ArgumentError)  
+    expect{bomba = Bomba.new 0,1,0}.to raise_error(ParametrosIncorrectosError)  
   end
 
   it 'deberia contener 333 unidades de vida al impactar con otro objeto espacial del tipo Nave' do

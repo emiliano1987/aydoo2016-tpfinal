@@ -36,7 +36,7 @@ describe 'Asteroide' do
 
   it 'deberia no permitir el ingreso de mas de dos parametros al crear el objeto espacial' do
 
-    expect{asteroide = Asteroide.new 1,1,1}.to raise_error(ArgumentError)  
+    expect{asteroide = Asteroide.new 1,1,1}.to raise_error(ParametrosIncorrectosError)  
   end
 
   it 'deberia contener 600 unidades de masa al impactar con otro objeto espacial del tipo Nave' do

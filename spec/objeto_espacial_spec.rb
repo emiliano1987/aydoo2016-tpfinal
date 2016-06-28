@@ -58,6 +58,6 @@ describe 'ObjetoEspacial' do
 
   it 'deberia no permitir el ingreso de mas de dos parametros al crear el objeto espacial' do
 
-    expect{objetoEspacial = ObjetoEspacial.new 1000, 41 , 100, 10, 10}.to raise_error(ArgumentError)  
+    expect{objetoEspacial = ObjetoEspacial.new 1000, 41 , 100, 10, 10}.to raise_error(ParametrosIncorrectosError)  
   end
 end
