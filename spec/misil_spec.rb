@@ -114,4 +114,11 @@ describe 'Misil' do
     expect(misil.vida).to eq 800
     expect(misil.masa).to eq 200
   end
+
+  it 'deberia mantener la vida del Misil al impactar con un Asteroide ya sin vida' do
+    misil = Misil.new 
+    asteroide = Asteroide.new 0,0
+
+    expect{misil.impacta_con_objeto asteroide}.to raise_error(ObjetoEspacialSinVidaError)
+  end
 end

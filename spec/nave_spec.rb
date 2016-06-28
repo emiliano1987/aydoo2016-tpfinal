@@ -102,4 +102,14 @@ describe 'Nave' do
     expect(nave.vida).to eq 0
     expect(nave.objeto_esta_vivo).to eq false
   end
+
+  it 'deberia no poder impactar con otro objeto espacial cuando ya no tiene vida' do
+    nave = Nave.new 1,1
+    primer_bomba = Bomba.new 
+    segunda_bomba = Bomba.new 
+
+    nave.impacta_con_objeto primer_bomba
+
+    expect{nave.impacta_con_objeto segunda_bomba}.to raise_error(ObjetoEspacialSinVidaError)
+  end
 end

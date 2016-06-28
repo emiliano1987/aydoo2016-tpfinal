@@ -1,17 +1,19 @@
 require_relative '../model/ingreso_parametros_incorrectos_error'
+require_relative '../model/objeto_espacial_sin_vida_error'
+
 class ObjetoEspacial
 
   attr_accessor :vida, :masa, :objeto_vivo, :efecto_choque
 
   def initialize(*args)
     @efecto_choque = Hash.new
-
-  if args.length == 2
-    inicializa_con_parametros(args[0],args[1])
-  elsif args.length == 0
-    inicializa_sin_parametros
-  else
-    fail ParametrosIncorrectosError.new end
+    if args.length == 2
+      inicializa_con_parametros(args[0],args[1])
+    elsif args.length == 0
+      inicializa_sin_parametros
+    else
+      fail ParametrosIncorrectosError.new 
+    end
   end
 
   def objeto_esta_vivo
@@ -19,7 +21,7 @@ class ObjetoEspacial
       @objeto_vivo = false
     else
       @objeto_vivo = true
-  end
+    end
     return @objeto_vivo
   end
 
@@ -27,6 +29,8 @@ class ObjetoEspacial
     if(self.objeto_esta_vivo == true && objeto_espacial.objeto_esta_vivo == true)
       @efecto_choque.fetch(objeto_espacial.class).impacto(self, objeto_espacial)
       objeto_espacial
+    else
+      fail ObjetoEspacialSinVidaError.new
     end
   end
 

@@ -101,4 +101,14 @@ describe 'Bomba' do
 
     expect(bomba.objeto_esta_vivo).to eq false
   end
+
+  it 'deberia lanzar una excepcion al intentar impactar sin vida contra otro objeto espacial' do
+    bomba = Bomba.new 100, 500
+    estrella = Estrella.new 
+    asteroide = Asteroide.new 1,100
+
+    bomba.impacta_con_objeto asteroide
+
+    expect{bomba.impacta_con_objeto estrella}.to raise_error(ObjetoEspacialSinVidaError)
+  end
 end

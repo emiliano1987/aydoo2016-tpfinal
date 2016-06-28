@@ -104,4 +104,11 @@ describe 'Asteroide' do
     expect(asteroide.masa).to eq 221
     expect(asteroide.objeto_esta_vivo).to eq true
   end
+
+  it 'deberia ejecutarse una excepcion al impactar con un objeto sin vida' do
+    asteroide = Asteroide.new 199, 221
+    bomba = Bomba.new 0,50
+
+    expect{asteroide.impacta_con_objeto bomba}.to raise_error(ObjetoEspacialSinVidaError)
+  end
 end

@@ -93,9 +93,6 @@ describe 'Estrella' do
     estrella = Estrella.new 
     asteroide = Asteroide.new 0,0
 
-    estrella.impacta_con_objeto asteroide
-
-    expect(estrella.vida).to eq 100
-    expect(estrella.objeto_esta_vivo).to eq true
+    expect{estrella.impacta_con_objeto asteroide}.to raise_error(ObjetoEspacialSinVidaError)
   end
 end
