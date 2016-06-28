@@ -6,36 +6,36 @@ describe 'Nave' do
 
   it 'deberia contener 100 unidades de vida al crear la Nave' do
     nave = Nave.new
-    
+
     expect(nave.vida).to eq 100
   end
 
   it 'deberia contener 100 unidades de masa al crear la Nave' do
     nave = Nave.new
-    
+
     expect(nave.vida).to eq 100
   end
 
   it 'deberia esta viva la nave al generarse' do
     nave = Nave.new
-    
+
     expect(nave.objeto_esta_vivo).to eq true
   end
 
   it 'deberia contener 1 unidad de masa al instanciarse' do
     nave = Nave.new 3000, 1
-    
+
     expect(nave.masa).to eq 1
   end
 
   it 'deberia contener 4000 unidad de vida al crearse' do
     nave = Nave.new 4000, 8
-    
+
     expect(nave.vida).to eq 4000
   end
 
   it 'deberia no permitir el ingreso de un parametros al crear la Nave' do
- 	  
+
     expect{nave = Nave.new 1 }.to raise_error(ArgumentError)  
   end
 

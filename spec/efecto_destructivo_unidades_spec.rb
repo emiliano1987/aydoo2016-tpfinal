@@ -8,9 +8,9 @@ describe 'EfectoDestructivoUnidades' do
     asteroide = Asteroide.new
     bomba = Bomba.new
     efecto = EfectoDestructivoUnidades.new 50
-    
+
     efecto.impacto(asteroide,bomba)
-    
+
     expect(asteroide.vida).to eq 50
   end
 
@@ -18,9 +18,9 @@ describe 'EfectoDestructivoUnidades' do
     nave = Nave.new
     asteroide = Asteroide.new
     efecto = EfectoDestructivoUnidades.new 30
-    
+
     efecto.impacto(nave,asteroide)
-    
+
     expect(nave.vida).to eq 70
   end
 
@@ -28,9 +28,9 @@ describe 'EfectoDestructivoUnidades' do
     estrella = Estrella.new
     misil = Misil.new
     efecto = EfectoDestructivoUnidades.new 10
-    
+
     efecto.impacto(estrella,misil)
-    
+
     expect(estrella.vida).to eq 90
   end
 
@@ -38,9 +38,9 @@ describe 'EfectoDestructivoUnidades' do
     estrella = Estrella.new
     misil = Misil.new
     efecto = EfectoDestructivoUnidades.new 10
-    
+
     efecto.impacto(estrella,misil)
-    
+
     expect(estrella.objeto_esta_vivo).to eq true
   end
 
@@ -48,9 +48,9 @@ describe 'EfectoDestructivoUnidades' do
     estrella = Estrella.new 10,1
     misil = Misil.new
     efecto = EfectoDestructivoUnidades.new 10
-    
+
     efecto.impacto(estrella,misil)
-    
+
     expect(estrella.objeto_esta_vivo).to eq false
   end
 
@@ -58,9 +58,9 @@ describe 'EfectoDestructivoUnidades' do
     estrella = Estrella.new 30,50
     misil = Misil.new
     efecto = EfectoDestructivoUnidades.new 40
-    
+
     efecto.impacto(estrella,misil)
-    
+
     expect(estrella.objeto_esta_vivo).to eq false
   end
 end

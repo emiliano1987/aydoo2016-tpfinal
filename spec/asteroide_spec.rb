@@ -6,36 +6,36 @@ describe 'Asteroide' do
 
   it 'deberia contener 100 unidades de vida al crear el Asteroide' do
     asteroide = Asteroide.new
-    
+
     expect(asteroide.vida).to eq 100
   end
 
   it 'deberia contener 100 unidades de masa al crear el Asteroide' do
     asteroide = Asteroide.new
-    
+
     expect(asteroide.masa).to eq 100
   end
 
   it 'deberia ser un objeto sin vida al crearse ya que su vida y masa es 0' do
     asteroide = Asteroide.new 0,0
-    
+
     expect(asteroide.objeto_esta_vivo).to eq false
   end
 
   it 'deberia contener 1 unidad de masa al crear el Asteroide' do
     asteroide = Asteroide.new 2, 1
-    
+
     expect(asteroide.masa).to eq 1
   end
 
   it 'deberia contener 0 unidades de vida al crear el Asteroide' do
     asteroide = Asteroide.new 0,0
-    
+
     expect(asteroide.vida).to eq 0
   end
 
   it 'deberia no permitir el ingreso de mas de dos parametros al crear el objeto espacial' do
- 	  
+
     expect{asteroide = Asteroide.new 1,1,1}.to raise_error(ArgumentError)  
   end
 
@@ -100,7 +100,6 @@ describe 'Asteroide' do
     asteroide.impacta_con_objeto segundo_asteroide
     asteroide.impacta_con_objeto bomba
     asteroide.impacta_con_objeto misil
-
 
     expect(asteroide.masa).to eq 221
     expect(asteroide.objeto_esta_vivo).to eq true

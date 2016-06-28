@@ -8,9 +8,9 @@ describe 'EfectoDestructivoPorcentaje' do
     asteroide = Asteroide.new
     bomba = Bomba.new
     efecto = EfectoDestructivoPorcentaje.new 100
-    
+
     efecto.impacto(asteroide,bomba)
-    
+
     expect(asteroide.vida).to eq 0
   end
 
@@ -18,9 +18,9 @@ describe 'EfectoDestructivoPorcentaje' do
     nave = Nave.new
     asteroide = Asteroide.new
     efecto = EfectoDestructivoPorcentaje.new 100
-    
+
     efecto.impacto(nave,asteroide)
-    
+
     expect(nave.vida).to eq 0
   end
 
@@ -28,9 +28,9 @@ describe 'EfectoDestructivoPorcentaje' do
     estrella = Estrella.new
     misil = Misil.new
     efecto = EfectoDestructivoPorcentaje.new 50
-    
+
     efecto.impacto(estrella,misil)
-    
+
     expect(estrella.vida).to eq 50
   end
 
@@ -38,9 +38,9 @@ describe 'EfectoDestructivoPorcentaje' do
     estrella = Estrella.new
     misil = Misil.new
     efecto = EfectoDestructivoPorcentaje.new 100
-    
+
     efecto.impacto(estrella,misil)
-    
+
     expect(estrella.objeto_esta_vivo).to eq false
   end
 end

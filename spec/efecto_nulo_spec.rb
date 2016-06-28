@@ -8,10 +8,9 @@ describe 'EfectoNulo' do
     asteroide = Asteroide.new
     bomba = Bomba.new
     efecto = EfectoNulo.new
-   
+
     efecto.impacto(asteroide,bomba)
-   
+
     expect(bomba.vida).to eq 100
   end
-
 end
